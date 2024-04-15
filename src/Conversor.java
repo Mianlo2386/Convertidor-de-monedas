@@ -1,11 +1,26 @@
-import org.json.JSONObject;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+import java.net.URL;
+import java.net.HttpURLConnection;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 public class Conversor {
-    private static final String API_KEY = "83327bac575b6a31ef3f161f";
+    private static final Properties prop = new Properties();
+
+    static {
+        try (InputStream input = new FileInputStream("config.properties")) {
+            prop.load(input);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private static final String API_KEY = prop.getProperty("api.key");
 
     public static double pesoArgentinoADolar(double monto) {
         String baseCode = "ARS";
@@ -34,8 +49,9 @@ public class Conversor {
             reader.close();
 
             // Parsear la respuesta JSON
-            JSONObject jsonResponse = new JSONObject(response.toString());
-            double conversionRate = jsonResponse.getDouble("conversion_rate");
+            JSONParser parser = new JSONParser();
+            JSONObject jsonResponse = (JSONObject) parser.parse(response.toString());
+            double conversionRate = Double.parseDouble(jsonResponse.get("conversion_rate").toString());
 
             return conversionRate;
         } catch (Exception e) {

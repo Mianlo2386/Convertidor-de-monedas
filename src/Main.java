@@ -1,4 +1,4 @@
-//Main.java
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -21,20 +21,35 @@ public class Main {
             System.out.println("**********************************\n");
 
             System.out.print("Ingrese el número de la opción: ");
-            int opcion = scanner.nextInt();
+            int opcion;
+            try {
+                opcion = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Por favor, ingrese un número válido.");
+                System.out.println("**********************************\n");
+                scanner.nextLine(); // Limpiar el buffer del scanner
+                continue;
+            }
 
             if (opcion == 7) {
                 System.out.println("Gracias por usar el Conversor de Monedas. ¡Hasta luego!");
                 break;
             }
 
-            System.out.print("Ingrese el monto a convertir: \n");
-            double monto = scanner.nextDouble();
+            System.out.print("Ingrese el monto a convertir: ");
+            double monto;
+            try {
+                monto = scanner.nextDouble();
+            } catch (InputMismatchException e) {
+                System.out.println("Por favor, ingrese un número válido (con coma si el número no es entero)");
+                scanner.nextLine(); // Limpiar el buffer del scanner
+                continue;
+            }
 
             switch (opcion) {
                 case 1:
-                    double resultado = Conversiones.pesoArgentinoADolar(monto);
-                    System.out.println(monto + " pesos argentinos equivalen a " + resultado + " dólares.");
+                    double resultado1 = Conversiones.pesoArgentinoADolar(monto);
+                    System.out.println(monto + " pesos argentinos equivalen a " + resultado1 + " dólares.");
                     System.out.println("**********************************\n");
                     break;
                 case 2:
@@ -44,12 +59,12 @@ public class Main {
                     break;
                 case 3:
                     double resultado3 = Conversiones.realADolar(monto);
-                    System.out.println(monto + " reales equivalen a " + resultado3 + " reales.");
+                    System.out.println(monto + " reales equivalen a " + resultado3 + " dólares.");
                     System.out.println("**********************************\n");
                     break;
                 case 4:
                     double resultado4 = Conversiones.dolarAReal(monto);
-                    System.out.println(monto + " dolares equivalen a " + resultado4 + " dólares.");
+                    System.out.println(monto + " dólares equivalen a " + resultado4 + " reales.");
                     System.out.println("**********************************\n");
                     break;
                 case 5:

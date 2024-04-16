@@ -17,13 +17,18 @@ public class Conversor {
         try (InputStream input = new FileInputStream("config.properties")) {
             prop.load(input);
         } catch (IOException ex) {
+            System.err.println("Hubo un problema al cargar las propiedades desde el archivo: " + ex.getMessage());
             ex.printStackTrace();
         }
     }
 
     private static final String API_KEY = prop.getProperty("api.key");
 
-    public static double obtenerTasaDeConversion(String baseCode, String targetCode) {
+    public static double getTasaDeConversion(String baseCode, String targetCode) {
+        return obtenerTasaDeConversion(baseCode, targetCode);
+    }
+
+    private static double obtenerTasaDeConversion(String baseCode, String targetCode) {
         try {
             URL url = new URL("https://v6.exchangerate-api.com/v6/" + API_KEY + "/pair/" + baseCode + "/" + targetCode);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -43,9 +48,14 @@ public class Conversor {
             double conversionRate = Double.parseDouble(jsonResponse.get("conversion_rate").toString());
 
             return conversionRate;
+        } catch (IOException e) {
+            System.err.println("Hubo un problema al conectarse con el servidor: " + e.getMessage());
+        } catch (org.json.simple.parser.ParseException e) {
+            System.err.println("Hubo un problema al parsear la respuesta JSON: " + e.getMessage());
         } catch (Exception e) {
-            e.printStackTrace();
-            return -1; // Manejar el error apropiadamente en tu aplicación
+            System.err.println("Se produjo un error inesperado: " + e.getMessage());
         }
+        return -1;
     }
+
 }

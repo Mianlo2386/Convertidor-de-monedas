@@ -17,7 +17,7 @@ public class Conversor {
             prop.load(input);
         } catch (IOException ex) {
             System.err.println("Hubo un problema al cargar las propiedades desde el archivo: " + ex.getMessage());
-            ex.printStackTrace(); // Imprimir la pila de llamadas
+
         }
     }
 
@@ -41,16 +41,15 @@ public class Conversor {
             Gson gson = new Gson();
             JsonResponse jsonResponse = gson.fromJson(response.body(), JsonResponse.class);
 
-            // Obtener la tasa de conversión del objeto JsonResponse
-            double conversionRate = jsonResponse.conversion_rate;
 
-            return conversionRate;
+
+            return jsonResponse.conversion_rate;
         } catch (IOException e) {
             System.err.println("Hubo un problema al conectarse con el servidor: " + e.getMessage());
-            e.printStackTrace(); // Imprimir la pila de llamadas
+
         } catch (Exception e) {
             System.err.println("Se produjo un error inesperado: " + e.getMessage());
-            e.printStackTrace(); // Imprimir la pila de llamadas
+
         }
         return -1;
     }

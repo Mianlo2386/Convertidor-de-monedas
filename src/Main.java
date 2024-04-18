@@ -18,6 +18,7 @@ public class Main {
             System.out.println("5. Peso Colombiano a Dólar");
             System.out.println("6. Dólar a Peso Colombiano");
             System.out.println("7. Salir");
+            System.out.println("8. Mostrar historial de conversiones");
             System.out.println("**********************************\n");
 
             System.out.print("Ingrese el número de la opción: ");
@@ -31,7 +32,10 @@ public class Main {
                 continue;
             }
 
-            if (opcion == 7) {
+            if (opcion == 8) {
+                HistorialConversiones.mostrarHistorial();
+                continue;
+            } else if (opcion == 7) {
                 System.out.println("Gracias por usar el Conversor de Monedas. ¡Hasta luego!");
                 break;
             }

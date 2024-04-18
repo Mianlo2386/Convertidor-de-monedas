@@ -2,3 +2,10 @@
 10000.0 reales equivalen a 1899.0000000000002 dólares.
 10000.0 dólares equivalen a 8647500.0 pesos argentinos.
 100000.0 pesos argentinos equivalen a 115.6 dólares.
+10000.0 reales equivalen a 1899.0000000000002 dólares.
+100.0 dólares equivalen a 391983.49 pesos colombianos.
+200.0 dólares equivalen a 172950.0 pesos argentinos.
+1000.0 dólares equivalen a 5264.700000000001 reales.
+100000.0 pesos colombianos equivalen a 25.512 dólares.
+25000.0 reales equivalen a 4747.5 dólares.
+300000.0 dólares equivalen a 1579410.0 reales.

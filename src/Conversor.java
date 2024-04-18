@@ -43,7 +43,8 @@ public class Conversor {
             JsonResponse jsonResponse = gson.fromJson(response.body(), JsonResponse.class);
 
             // Obtener la tasa de conversión del objeto JsonResponse
-            double conversionRate = jsonResponse.conversion_rate;
+            double conversionRate;
+            conversionRate = jsonResponse.conversion_rate;
 
 
             return conversionRate;

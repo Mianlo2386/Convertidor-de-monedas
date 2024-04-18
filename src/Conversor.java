@@ -1,14 +1,14 @@
-// Conversor.java
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.Properties;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
+
+import com.google.gson.Gson;
+
 
 public class Conversor {
     private static final Properties prop = new Properties();
@@ -30,32 +30,28 @@ public class Conversor {
 
     private static double obtenerTasaDeConversion(String baseCode, String targetCode) {
         try {
-            URL url = new URL("https://v6.exchangerate-api.com/v6/" + API_KEY + "/pair/" + baseCode + "/" + targetCode);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("GET");
+            HttpClient client = HttpClient.newHttpClient();
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            StringBuilder response = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                response.append(line);
-            }
-            reader.close();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create("https://v6.exchangerate-api.com/v6/" + API_KEY + "/pair/" + baseCode + "/" + targetCode))
+                    .build();
 
-            // Parsear la respuesta JSON
-            JSONParser parser = new JSONParser();
-            JSONObject jsonResponse = (JSONObject) parser.parse(response.toString());
-            double conversionRate = Double.parseDouble(jsonResponse.get("conversion_rate").toString());
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            // Utilizando Gson para parsear la respuesta JSON
+            Gson gson = new Gson();
+            JsonResponse jsonResponse = gson.fromJson(response.body(), JsonResponse.class);
+
+            // Obtener la tasa de conversión del objeto JsonResponse
+            double conversionRate = jsonResponse.conversion_rate;
+
 
             return conversionRate;
         } catch (IOException e) {
             System.err.println("Hubo un problema al conectarse con el servidor: " + e.getMessage());
-        } catch (org.json.simple.parser.ParseException e) {
-            System.err.println("Hubo un problema al parsear la respuesta JSON: " + e.getMessage());
         } catch (Exception e) {
             System.err.println("Se produjo un error inesperado: " + e.getMessage());
         }
         return -1;
     }
-
 }

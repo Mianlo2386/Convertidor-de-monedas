@@ -1,0 +1,4 @@
+1000.0 dólares equivalen a 864750.0 pesos argentinos.
+10000.0 reales equivalen a 1899.0000000000002 dólares.
+10000.0 dólares equivalen a 8647500.0 pesos argentinos.
+100000.0 pesos argentinos equivalen a 115.6 dólares.

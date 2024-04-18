@@ -51,35 +51,42 @@ public class Main {
                     double resultado1 = Conversiones.pesoArgentinoADolar(monto);
                     System.out.println(monto + " pesos argentinos equivalen a " + resultado1 + " dólares.");
                     System.out.println("**********************************\n");
+                    HistorialConversiones.guardarConversion(monto + " pesos argentinos equivalen a " + resultado1 + " dólares.");
                     break;
                 case 2:
                     double resultado2 = Conversiones.dolarAPesoArgentino(monto);
                     System.out.println(monto + " dólares equivalen a " + resultado2 + " pesos argentinos.");
                     System.out.println("**********************************\n");
+                    HistorialConversiones.guardarConversion(monto + " dólares equivalen a " + resultado2 + " pesos argentinos.");
                     break;
                 case 3:
                     double resultado3 = Conversiones.realADolar(monto);
                     System.out.println(monto + " reales equivalen a " + resultado3 + " dólares.");
                     System.out.println("**********************************\n");
+                    HistorialConversiones.guardarConversion(monto + " reales equivalen a " + resultado3 + " dólares.");
                     break;
                 case 4:
                     double resultado4 = Conversiones.dolarAReal(monto);
                     System.out.println(monto + " dólares equivalen a " + resultado4 + " reales.");
                     System.out.println("**********************************\n");
+                    HistorialConversiones.guardarConversion(monto + " dólares equivalen a " + resultado4 + " reales.");
                     break;
                 case 5:
                     double resultado5 = Conversiones.pesoColombianoADolar(monto);
                     System.out.println(monto + " pesos colombianos equivalen a " + resultado5 + " dólares.");
                     System.out.println("**********************************\n");
+                    HistorialConversiones.guardarConversion(monto + " pesos colombianos equivalen a " + resultado5 + " dólares.");
                     break;
                 case 6:
                     double resultado6 = Conversiones.dolarAPesoColombiano(monto);
                     System.out.println(monto + " dólares equivalen a " + resultado6 + " pesos colombianos.");
                     System.out.println("**********************************\n");
+                    HistorialConversiones.guardarConversion(monto + " dólares equivalen a " + resultado6 + " pesos colombianos.");
                     break;
                 default:
                     System.out.println("Por favor, ingrese una opción válida.");
             }
+
         }
     }
 }

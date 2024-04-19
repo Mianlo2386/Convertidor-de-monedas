@@ -9,3 +9,13 @@
 100000.0 pesos colombianos equivalen a 25.512 dólares.
 25000.0 reales equivalen a 4747.5 dólares.
 300000.0 dólares equivalen a 1579410.0 reales.
+1000.0 pesos colombianos equivalen a 0.0 dólares.
+10000.0 pesos colombianos equivalen a 0.0 dólares.
+100000.0 pesos colombianos equivalen a 0.0 dólares.
+100.0 dólares equivalen a 86475.0 pesos argentinos.
+100000.0 pesos colombianos equivalen a 0.0 dólares.
+100000.0 pesos colombianos equivalen a 25.512 dólares.
+100000.0 pesos colombianos equivalen a 0.0 dólares.
+100000.0 pesos colombianos equivalen a 0.0 dólares.
+100000.0 pesos colombianos equivalen a 25.512 dólares.
+100000.0 pesos colombianos equivalen a 25.512 dólares.

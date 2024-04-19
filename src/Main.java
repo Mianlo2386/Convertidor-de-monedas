@@ -19,6 +19,7 @@ public class Main {
             System.out.println("6. Dólar a Peso Colombiano");
             System.out.println("7. Salir");
             System.out.println("8. Mostrar historial de conversiones");
+            System.out.println("9. Conversión de otras monedas");
             System.out.println("**********************************\n");
 
             System.out.print("Ingrese el número de la opción: ");
@@ -32,7 +33,20 @@ public class Main {
                 continue;
             }
 
-            if (opcion == 8) {
+            if (opcion == 9) {
+                ListaMonedas.mostrarListado(); // Mostrar listado de códigos de moneda
+                System.out.println("**********************************\n");
+                System.out.print("Ingrese el número de la moneda de origen: ");
+                int monedaOrigen = scanner.nextInt();
+                System.out.print("Ingrese el número de la moneda de destino: ");
+                int monedaDestino = scanner.nextInt();
+                System.out.print("Ingrese el monto a convertir: ");
+                double monto = scanner.nextDouble();
+                double resultado9 = OtrasConversiones.otrasConversiones(monedaOrigen, monedaDestino, monto);
+                System.out.println(monto + " de moneda origen " + resultado9 + " de moneda destino.");
+                System.out.println("**********************************\n");
+                continue;
+            } else if (opcion == 8) {
                 HistorialConversiones.mostrarHistorial();
                 continue;
             } else if (opcion == 7) {
@@ -46,7 +60,7 @@ public class Main {
                 monto = scanner.nextDouble();
             } catch (InputMismatchException e) {
                 System.out.println("Por favor, ingrese un número válido (con coma si el número no es entero)");
-                scanner.nextLine(); // Limpiar el buffer del scanner
+                scanner.nextLine();
                 continue;
             }
 

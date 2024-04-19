@@ -40,16 +40,11 @@ public class Conversor {
             // Utilizando Gson para parsear la respuesta JSON
             Gson gson = new Gson();
             JsonResponse jsonResponse = gson.fromJson(response.body(), JsonResponse.class);
-
-
-
             return jsonResponse.conversion_rate;
         } catch (IOException e) {
             System.err.println("Hubo un problema al conectarse con el servidor: " + e.getMessage());
-
         } catch (Exception e) {
             System.err.println("Se produjo un error inesperado: " + e.getMessage());
-
         }
         return -1;
     }

@@ -13,16 +13,16 @@ public class ListadoDeMonedas {
     }
     public static ArrayList<Moneda> crearListaMonedas() {
         listaMonedas = new ArrayList<>();
-        listaMonedas.add(new Moneda(1, "AED", "Dirham de los Emiratos Árabes Unidos"));
-        listaMonedas.add(new Moneda(2, "AFN", "Afgani afgano - Afganistán"));
-        listaMonedas.add(new Moneda(3, "ALL", "Lek albanés - Albania"));
-        listaMonedas.add(new Moneda(4, "AMD", "Dram armenio - Armenia"));
-        listaMonedas.add(new Moneda(5, "ANG", "Florín antillano neerlandés - Antillas Neerlandesas"));
-        listaMonedas.add(new Moneda(6, "AOA", "Kwanza angoleño - Angola"));
-        listaMonedas.add(new Moneda(7, "ARS", "Peso argentino - Argentina"));
-        listaMonedas.add(new Moneda(8, "AUD", "Dólar australiano - Australia"));
-        listaMonedas.add(new Moneda(9, "AWG", "Florín arubeño - Aruba"));
-        listaMonedas.add(new Moneda(10, "AZN", "Manat azerí - Azerbaiyán"));
+        listaMonedas.add(new Moneda(1, "AED", "dirhams de los Emiratos Árabes Unidos"));
+        listaMonedas.add(new Moneda(2, "AFN", "afganis de Afganistán"));
+        listaMonedas.add(new Moneda(3, "ALL", "leks de Albania"));
+        listaMonedas.add(new Moneda(4, "AMD", "drams armenios"));
+        listaMonedas.add(new Moneda(5, "ANG", "florines de Antillas Neerlandesas"));
+        listaMonedas.add(new Moneda(6, "AOA", "kwanza angoleños"));
+        listaMonedas.add(new Moneda(7, "ARS", "pesos argentinos"));
+        listaMonedas.add(new Moneda(8, "AUD", "dólares australianos"));
+        listaMonedas.add(new Moneda(9, "AWG", "florines arubeños"));
+        listaMonedas.add(new Moneda(10, "AZN", "manats de Azerbaiyán"));
         listaMonedas.add(new Moneda(11, "BAM", "Marco convertible de Bosnia y Herzegovina - Bosnia y Herzegovina"));
         listaMonedas.add(new Moneda(12, "BBD", "Dólar de Barbados - Barbados"));
         listaMonedas.add(new Moneda(13, "BDT", "Taka bangladesí - Bangladés"));
@@ -43,7 +43,7 @@ public class ListadoDeMonedas {
         listaMonedas.add(new Moneda(28, "CHF", "Franco suizo - Suiza"));
         listaMonedas.add(new Moneda(29, "CLP", "Peso chileno - Chile"));
         listaMonedas.add(new Moneda(30, "CNY", "Yuan chino - China"));
-        listaMonedas.add(new Moneda(31, "COP", "Peso colombiano - Colombia"));
+        listaMonedas.add(new Moneda(31, "COP", "pesos colombianos"));
         listaMonedas.add(new Moneda(32, "CRC", "Colón costarricense - Costa Rica"));
         listaMonedas.add(new Moneda(33, "CUP", "Peso cubano - Cuba"));
         listaMonedas.add(new Moneda(34, "CVE", "Escudo caboverdiano - Cabo Verde"));
@@ -158,7 +158,7 @@ public class ListadoDeMonedas {
         listaMonedas.add(new Moneda(143, "TZS", "Chelín tanzano - Tanzania"));
         listaMonedas.add(new Moneda(144, "UAH", "Grivna ucraniana - Ucrania"));
         listaMonedas.add(new Moneda(145, "UGX", "Chelín ugandés - Uganda"));
-        listaMonedas.add(new Moneda(146, "USD", "Dólar estadounidense - Estados Unidos"));
+        listaMonedas.add(new Moneda(146, "USD", "dólares estadounidenses"));
         listaMonedas.add(new Moneda(147, "UYU", "Peso uruguayo - Uruguay"));
         listaMonedas.add(new Moneda(148, "UZS", "Som uzbeko - Uzbekistán"));
         listaMonedas.add(new Moneda(149, "VES", "Bolívar soberano venezolano - Venezuela"));
@@ -197,9 +197,9 @@ public class ListadoDeMonedas {
         }
         return null; // Devuelve null si listaMonedas es null o si no se encuentra la moneda
     }
-    public static ArrayList<Moneda> getListaMonedas() {
-        return listaMonedas;
-    }
+//    public static ArrayList<Moneda> getListaMonedas() {
+//        return listaMonedas;
+//    }
 
 }
 

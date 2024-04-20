@@ -3,6 +3,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        ListadoDeMonedas.crearListaMonedas();
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("************************************");
@@ -34,7 +37,7 @@ public class Main {
             }
 
             if (opcion == 9) {
-                ListaMonedas.mostrarListado(); // Mostrar listado de códigos de moneda
+                ListadoDeMonedas.mostrarListado(); // Mostrar listado de códigos de moneda
                 System.out.println("**********************************\n");
                 System.out.print("Ingrese el número de la moneda de origen: ");
                 int monedaOrigen = scanner.nextInt();
@@ -42,8 +45,13 @@ public class Main {
                 int monedaDestino = scanner.nextInt();
                 System.out.print("Ingrese el monto a convertir: ");
                 double monto = scanner.nextDouble();
-                double resultado9 = OtrasConversiones.otrasConversiones(monedaOrigen, monedaDestino, monto);
-                System.out.println(monto + " de moneda origen " + resultado9 + " de moneda destino.");
+
+                // Obtener los códigos de las monedas
+                String codigoMonedaOrigen = ListadoDeMonedas.getCodigoMoneda(monedaOrigen);
+                String codigoMonedaDestino = ListadoDeMonedas.getCodigoMoneda(monedaDestino);
+
+                double resultado9 = Conversiones.convertirMoneda(monto, codigoMonedaOrigen, codigoMonedaDestino);
+                System.out.println(monto + " de " + ListadoDeMonedas.getNombreMoneda(monedaOrigen) + " equivalen a " + resultado9 + " de " + ListadoDeMonedas.getNombreMoneda(monedaDestino) + ".");
                 System.out.println("**********************************\n");
                 continue;
             } else if (opcion == 8) {
@@ -66,37 +74,37 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    double resultado1 = Conversiones.pesoArgentinoADolar(monto);
+                    double resultado1 = Conversiones.convertirMoneda(monto, "ARS", "USD");
                     System.out.println(monto + " pesos argentinos equivalen a " + resultado1 + " dólares.");
                     System.out.println("**********************************\n");
                     HistorialConversiones.guardarConversion(monto + " pesos argentinos equivalen a " + resultado1 + " dólares.");
                     break;
                 case 2:
-                    double resultado2 = Conversiones.dolarAPesoArgentino(monto);
+                    double resultado2 = Conversiones.convertirMoneda(monto, "USD", "ARS");
                     System.out.println(monto + " dólares equivalen a " + resultado2 + " pesos argentinos.");
                     System.out.println("**********************************\n");
                     HistorialConversiones.guardarConversion(monto + " dólares equivalen a " + resultado2 + " pesos argentinos.");
                     break;
                 case 3:
-                    double resultado3 = Conversiones.realADolar(monto);
-                    System.out.println(monto + " reales equivalen a " + resultado3 + " dólares.");
+                    double resultado3 = Conversiones.convertirMoneda(monto, "BRL", "USD");
+                    System.out.println(monto + " reales brasileños equivalen a " + resultado3 + " dólares.");
                     System.out.println("**********************************\n");
-                    HistorialConversiones.guardarConversion(monto + " reales equivalen a " + resultado3 + " dólares.");
+                    HistorialConversiones.guardarConversion(monto + " reales brasileños equivalen a " + resultado3 + " dólares.");
                     break;
                 case 4:
-                    double resultado4 = Conversiones.dolarAReal(monto);
-                    System.out.println(monto + " dólares equivalen a " + resultado4 + " reales.");
+                    double resultado4 = Conversiones.convertirMoneda(monto, "USD", "BRL");
+                    System.out.println(monto + " dólares equivalen a " + resultado4 + " reales brasileños.");
                     System.out.println("**********************************\n");
-                    HistorialConversiones.guardarConversion(monto + " dólares equivalen a " + resultado4 + " reales.");
+                    HistorialConversiones.guardarConversion(monto + " dólares equivalen a " + resultado4 + " reales brasileños.");
                     break;
                 case 5:
-                    double resultado5 = Conversiones.pesoColombianoADolar(monto);
+                    double resultado5 = Conversiones.convertirMoneda(monto, "COP", "USD");
                     System.out.println(monto + " pesos colombianos equivalen a " + resultado5 + " dólares.");
                     System.out.println("**********************************\n");
                     HistorialConversiones.guardarConversion(monto + " pesos colombianos equivalen a " + resultado5 + " dólares.");
                     break;
                 case 6:
-                    double resultado6 = Conversiones.dolarAPesoColombiano(monto);
+                    double resultado6 = Conversiones.convertirMoneda(monto, "USD", "COP");
                     System.out.println(monto + " dólares equivalen a " + resultado6 + " pesos colombianos.");
                     System.out.println("**********************************\n");
                     HistorialConversiones.guardarConversion(monto + " dólares equivalen a " + resultado6 + " pesos colombianos.");

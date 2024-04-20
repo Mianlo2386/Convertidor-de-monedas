@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69f71878-4082-453e-83b1-9255a95e2a27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ListaMonedas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OtrasConversiones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ListadoDeMonedas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Moneda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/historial.txt" beforeDir="false" afterPath="$PROJECT_DIR$/historial.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conversor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conversor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conversiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conversiones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ListaMonedas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListaMonedas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OtrasConversiones.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +53,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2f6xBzOQxB2DwQTrQWzbAD0imVQ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
